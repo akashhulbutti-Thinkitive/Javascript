@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var username = document.getElementById("username");
+            var password1 = document.getElementById("password1");
+            var password2 = document.getElementById("password2");
+            var contact = document.getElementById("contact");
+            var emailId = document.getElementById("email");
+            alert(username.value + " : " + password2.value + " : " + password1.value);
+            if (username.value == "") {
+                alert("Username is wrong");
+                return false;
+            }
+
+            if (password1.value == "" || password2.value == "") {
+                alert("Password is cannot be empty");
+                return false;
+            } else if (!password1.value.matches(password2.value)) {
+                alert("Both Password does not match");
+                return false;
+            }
+
+            if (emailId.value == "") {
+                alert("EmailId is wrong");
+                return false;
+            }
+
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" onsubmit="return validate()" method="POST">
+        <label for="username">Username : </label><input type="text" name="username" id="username" />
+        <label for="username">Password : </label><input type="password" name="password1" id="password1" />
+        <label for="username">Retype Password : </label><input type="password" name="password2" id="password2" />
+        <label for="username">Contact : </label><input type="number" minlength="10" maxlength="10" name="contact" id="contact" />
+        <label for="username">Email : </label><input type="email" name="email" id="email" />
+        <input type="submit" value="SUBMIT" />
+    </form>
+</body>
+
+</html>
